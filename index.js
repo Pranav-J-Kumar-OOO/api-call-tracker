@@ -4,10 +4,13 @@ const admin = require('firebase-admin')
 const app = express()
 app.use(express.json())
 
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CREDENTIALS)),
   databaseURL: process.env.FIREBASE_DB_URL
-})
+});
+
 
 const db = admin.database()
 
