@@ -6,7 +6,6 @@ const app = express()
 app.use(cors())                     // ← add (before routes)
 app.use(express.json())
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CREDENTIALS)),
