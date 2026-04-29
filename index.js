@@ -1,11 +1,9 @@
-// index.js
 const express = require('express')
+const cors = require('cors')        // ← add
 const admin = require('firebase-admin')
 const app = express()
 
-const cors = require('cors')
-app.use(cors())
-
+app.use(cors())                     // ← add (before routes)
 app.use(express.json())
 
 var serviceAccount = require("path/to/serviceAccountKey.json");
